@@ -13,7 +13,6 @@ terraform {
     bucket  = "tastylog-tfstate-infra"
     key     = "tastylog-dev.tfstate"
     region  = "ap-northeast-1"
-    profile = "terraform"
   }
 }
 
