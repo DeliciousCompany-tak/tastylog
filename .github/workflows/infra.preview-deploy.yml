@@ -78,7 +78,7 @@ jobs:
                       "type": "header",
                       "text": {
                         "type": "plain_text",
-                        "text": "Request for approve",
+                        "text": "Request for approve!",
                         "emoji": true
                       }
                     },
