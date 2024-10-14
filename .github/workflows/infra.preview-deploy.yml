@@ -35,10 +35,9 @@ jobs:
       - name: Checkout repositorys
         uses: actions/checkout@v4
       - name: Setup terraform
-        uses: hashicorp/setup-terraform@v2
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: ${{ env.TF_VERSION }}
-          terraform_wrapper: false
       - name: Terraform format
         run: |
           terraform fmt -check
