@@ -50,12 +50,12 @@ jobs:
       - name: Terraform init
         run: |
           terraform init -no-color
-      - name: Terraform validateadd
+      - name: Terraform validate
         run: |
           terraform validate -no-color
       - name: Terraform plan
-        id: "plan"
         continue-on-error: true
+        id: plan
         run: |
           terraform plan \
             -var 'project=${{ env.TF_PROJECT }}' \
@@ -65,8 +65,6 @@ jobs:
             -input=false \
             -no-color \
             -detailed-exitcode
-      - name: Debug exit code
-        run: echo "TF_PLAN_EXITCODE=${{ steps.plan.outputs.exitcode }}"
       - name: Slack notify
         uses: slackapi/slack-github-action@v1.27.0
         with: 
