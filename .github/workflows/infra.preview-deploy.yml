@@ -65,7 +65,7 @@ jobs:
             -input=false \
             -no-color \
             -detailed-exitcode
-          echo "exitcode=$(echo $?)" >> $GITHUB_ENV
+          echo "exitcode=$(echo $?)"
       - name: Slack notify
         uses: slackapi/slack-github-action@v1.27.0
         with: 
@@ -87,7 +87,7 @@ jobs:
                       "type": "section",
                       "text": {
                         "type": "mrkdwn",
-                        "text": "${{ env.exitcode }}"
+                        "text": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                       }
                     }
                   ]
